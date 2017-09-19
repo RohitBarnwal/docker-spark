@@ -27,6 +27,7 @@ docker build --rm -t rohitbarnwal7/spark:2.2.0 .
 docker run -it -p 8088:8088 -p 8042:8042 -p 4040:4040 -p 18080:18080 -h sandbox rohitbarnwal7/spark:2.2.0 bash
 
 ## Versions
+
 ```
 Hadoop 2.7.0 and Apache Spark v2.2.0 on Centos
 ```
