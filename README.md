@@ -10,12 +10,12 @@ The base Hadoop Docker image is also available as an official [Docker image](htt
 
 ##Pull the image from Docker Repository
 ```
-docker pull sequenceiq/spark:1.6.0
+docker pull rohitbarnwal7/spark:2.2.0
 ```
 
 ## Building the image
 ```
-docker build --rm -t sequenceiq/spark:1.6.0 .
+docker build --rm -t rohitbarnwal7/spark:2.2.0 .
 ```
 
 ## Running the image
@@ -24,16 +24,12 @@ docker build --rm -t sequenceiq/spark:1.6.0 .
 * in your /etc/hosts file add $(boot2docker ip) as host 'sandbox' to make it easier to access your sandbox UI
 * open yarn UI ports when running container
 ```
-docker run -it -p 8088:8088 -p 8042:8042 -p 4040:4040 -h sandbox sequenceiq/spark:1.6.0 bash
-```
-or
-```
-docker run -d -h sandbox sequenceiq/spark:1.6.0 -d
-```
+docker run -it -p 8088:8088 -p 8042:8042 -p 4040:4040 -p 18080:18080 -h sandbox rohitbarnwal7/spark:2.2.0 bash
+
 
 ## Versions
 ```
-Hadoop 2.6.0 and Apache Spark v1.6.0 on Centos
+Hadoop 2.7.0 and Apache Spark v2.2.0 on Centos
 ```
 
 ## Testing
@@ -71,7 +67,7 @@ spark-submit \
 --driver-memory 1g \
 --executor-memory 1g \
 --executor-cores 1 \
-$SPARK_HOME/lib/spark-examples-1.6.0-hadoop2.6.0.jar
+usr/local/spark/examples/jars/spark-examples_2.11-2.2.0.jar
 ```
 
 Estimating Pi (yarn-client mode):
@@ -84,7 +80,8 @@ spark-submit \
 --driver-memory 1g \
 --executor-memory 1g \
 --executor-cores 1 \
-$SPARK_HOME/lib/spark-examples-1.6.0-hadoop2.6.0.jar
+usr/local/spark/examples/jars/spark-examples_2.11-2.2.0.jar
+
 ```
 
 ### Submitting from the outside of the container
